@@ -1,9 +1,4 @@
-# coding: utf-8
-
 from __future__ import absolute_import
-from datetime import date, datetime  # noqa: F401
-
-from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
 from swagger_server import util
@@ -14,28 +9,28 @@ class Purchase(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, shp_date_created_id: str=None, shp_datetime_created_id: str=None, shp_date_handling_id: str=None, shp_datetime_handling_id: str=None, shp_sender_id: str=None, shp_order_cost: str=None, cat_categ_id_l7: str=None, shp_add_zip_code: str=None, shp_date_shipped_id: str=None, shp_datetime_shipped_id: str=None):  # noqa: E501
+    def __init__(self, shp_date_created_id: str=None, shp_datetime_created_id: str=None, shp_date_handling_id: str=None, shp_datetime_handling_id: str=None, shp_sender_id: str=None, shp_order_cost: str=None, cat_categ_id_l7: str=None, shp_add_zip_code: str=None, shp_date_shipped_id: str=None, shp_datetime_shipped_id: str=None):
         """Purchase - a model defined in Swagger
 
-        :param shp_date_created_id: The shp_date_created_id of this Purchase.  # noqa: E501
+        :param shp_date_created_id: The shp_date_created_id of this Purchase.
         :type shp_date_created_id: str
-        :param shp_datetime_created_id: The shp_datetime_created_id of this Purchase.  # noqa: E501
+        :param shp_datetime_created_id: The shp_datetime_created_id of this Purchase.
         :type shp_datetime_created_id: str
-        :param shp_date_handling_id: The shp_date_handling_id of this Purchase.  # noqa: E501
+        :param shp_date_handling_id: The shp_date_handling_id of this Purchase.
         :type shp_date_handling_id: str
-        :param shp_datetime_handling_id: The shp_datetime_handling_id of this Purchase.  # noqa: E501
+        :param shp_datetime_handling_id: The shp_datetime_handling_id of this Purchase.
         :type shp_datetime_handling_id: str
-        :param shp_sender_id: The shp_sender_id of this Purchase.  # noqa: E501
+        :param shp_sender_id: The shp_sender_id of this Purchase.
         :type shp_sender_id: str
-        :param shp_order_cost: The shp_order_cost of this Purchase.  # noqa: E501
+        :param shp_order_cost: The shp_order_cost of this Purchase.
         :type shp_order_cost: str
-        :param cat_categ_id_l7: The cat_categ_id_l7 of this Purchase.  # noqa: E501
+        :param cat_categ_id_l7: The cat_categ_id_l7 of this Purchase.
         :type cat_categ_id_l7: str
-        :param shp_add_zip_code: The shp_add_zip_code of this Purchase.  # noqa: E501
+        :param shp_add_zip_code: The shp_add_zip_code of this Purchase.
         :type shp_add_zip_code: str
-        :param shp_date_shipped_id: The shp_date_shipped_id of this Purchase.  # noqa: E501
+        :param shp_date_shipped_id: The shp_date_shipped_id of this Purchase.
         :type shp_date_shipped_id: str
-        :param shp_datetime_shipped_id: The shp_datetime_shipped_id of this Purchase.  # noqa: E501
+        :param shp_datetime_shipped_id: The shp_datetime_shipped_id of this Purchase.
         :type shp_datetime_shipped_id: str
         """
         self.swagger_types = {
@@ -80,7 +75,7 @@ class Purchase(Model):
 
         :param dikt: A dict.
         :type: dict
-        :return: The Purchase of this Purchase.  # noqa: E501
+        :return: The Purchase of this Purchase.
         :rtype: Purchase
         """
         return util.deserialize_model(dikt, cls)
