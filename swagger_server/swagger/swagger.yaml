@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: handling-time-api
+  description: This is a sample of the Handling Time MeLi API.
+  license:
+    name: Apache-2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about this API
+  url: api.swagger.com
+servers:
+- url: https://asdasdasd.execute-api.us-east-1.amazonaws.com/v1
+tags:
+- name: purchase
+  description: Everything about the purchase
+paths:
+  /linreg:
+    post:
+      tags:
+      - linear-regression
+      summary: Get handling time using Linear Regression
+      description: Purchase for predicting handling-time
+      operationId: get_linear_reg_prediction
+      requestBody:
+        description: Purchase for predicting handling-time
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purchase'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HandlingTime'
+        400:
+          description: Invalid purchase supplied
+      x-openapi-router-controller: swagger_server.controllers.linear_regression_controller
+  /median:
+    post:
+      tags:
+      - median
+      summary: Get handling time using Median
+      description: Get handling time using Median
+      operationId: get_median_prediction
+      requestBody:
+        description: Purchase for predicting handling-time
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purchase'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HandlingTime'
+        400:
+          description: Invalid purchase supplied
+      security:
+      - ApiKeyAuth: []
+      x-openapi-router-controller: swagger_server.controllers.median_controller
+components:
+  schemas:
+    HandlingTime:
+      title: HandlingTime
+      type: object
+      properties:
+        handling-time:
+          type: integer
+          description: Predicted handling-time.
+      description: The handling time predicted
+      example:
+        handling-time: 0
+    Purchase:
+      title: Purchase
+      required:
+      - imageUrls
+      - name
+      type: object
+      properties:
+        SHP_DATE_CREATED_ID:
+          type: string
+        SHP_DATETIME_CREATED_ID:
+          type: string
+        SHP_DATE_HANDLING_ID:
+          type: string
+        SHP_DATETIME_HANDLING_ID:
+          type: string
+        SHP_SENDER_ID:
+          type: string
+        SHP_ORDER_COST:
+          type: string
+        CAT_CATEG_ID_L7:
+          type: string
+        SHP_ADD_ZIP_CODE:
+          type: string
+        SHP_DATE_SHIPPED_ID:
+          type: string
+        SHP_DATETIME_SHIPPED_ID:
+          type: string
+      description: A product to commercialize
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      name: API-KEY
+      in: header
+      x-apikeyInfoFunc: swagger_server.controllers.authorization_controller.check_ApiKeyAuth
+
