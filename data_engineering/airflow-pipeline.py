@@ -22,13 +22,13 @@ one task to create and store the model.
 
 collectData= BashOperator(
     task_id='spark-collect-data',
-    bash_command='python ' + srcDir + 'data_engineering/spark-collect-data.py ',
+    bash_command='python ' + srcDir + 'data_engineering/collect_data.py ',
     dag=dag)
 
 
 featureEngineering = BashOperator(
     task_id='spark-feature-engineering',
-    bash_command=sparkSubmit + ' ' + srcDir + 'data_engineering/spark-feature-engineering.py ',
+    bash_command=sparkSubmit + ' ' + srcDir + 'data_engineering/feature_engineering.py ',
     dag=dag)
 
 featureEngineering.set_upstream(collectData)
@@ -36,7 +36,7 @@ featureEngineering.set_upstream(collectData)
 
 buildingModel = BashOperator(
     task_id='spark-building-model',
-    bash_command=sparkSubmit + ' ' + srcDir + 'data_engineering/spark-building-model.py ',
+    bash_command=sparkSubmit + ' ' + srcDir + 'data_engineering/building_model.py ',
     dag=dag)
 
 buildingModel.set_upstream(featureEngineering)
