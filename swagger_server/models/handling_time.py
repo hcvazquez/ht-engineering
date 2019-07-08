@@ -1,9 +1,4 @@
-# coding: utf-8
-
 from __future__ import absolute_import
-from datetime import date, datetime  # noqa: F401
-
-from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
 from swagger_server import util
@@ -14,10 +9,10 @@ class HandlingTime(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, handling_time: int=None):  # noqa: E501
+    def __init__(self, handling_time: int=None):
         """HandlingTime - a model defined in Swagger
 
-        :param handling_time: The handling_time of this HandlingTime.  # noqa: E501
+        :param handling_time: The handling_time of this HandlingTime.
         :type handling_time: int
         """
         self.swagger_types = {
@@ -35,7 +30,7 @@ class HandlingTime(Model):
 
         :param dikt: A dict.
         :type: dict
-        :return: The HandlingTime of this HandlingTime.  # noqa: E501
+        :return: The HandlingTime of this HandlingTime.
         :rtype: HandlingTime
         """
         return util.deserialize_model(dikt, cls)
@@ -44,7 +39,7 @@ class HandlingTime(Model):
     def handling_time(self) -> int:
         """Gets the handling_time of this HandlingTime.
 
-        Predicted handling-time.  # noqa: E501
+        Predicted handling-time.
 
         :return: The handling_time of this HandlingTime.
         :rtype: int
@@ -55,7 +50,7 @@ class HandlingTime(Model):
     def handling_time(self, handling_time: int):
         """Sets the handling_time of this HandlingTime.
 
-        Predicted handling-time.  # noqa: E501
+        Predicted handling-time.
 
         :param handling_time: The handling_time of this HandlingTime.
         :type handling_time: int
